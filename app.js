@@ -9,7 +9,7 @@ const foods = [
   {
     id: "beef-shank",
     name: "牛腱子肉",
-    caution: "尿酸/LDL偏高，每周0-1次",
+    caution: "尿酸/LDL偏高，先每周1次；稳定后每周1-2次",
     raw: { kcal: 130, protein: 21, carbs: 0, fat: 4 },
     cooked: { kcal: 200, protein: 34, carbs: 0, fat: 6 },
   },
