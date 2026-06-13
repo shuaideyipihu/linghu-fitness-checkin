@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>每日增肌打卡</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Source+Han+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Lean bulk tracker</p>
+          <h1>每日增肌打卡</h1>
+          <p class="subtitle">高尿酸、LDL 偏高、轻度腰椎间盘突出友好版</p>
+        </div>
+        <div class="date-panel">
+          <label for="entry-date">记录日期</label>
+          <input id="entry-date" type="date" />
+          <div class="save-state" id="save-state">已自动保存</div>
+        </div>
+      </header>
+
+      <main>
+        <section class="overview-grid" aria-label="今日概览">
+          <article class="metric-card">
+            <span class="metric-label">目标热量</span>
+            <strong>2400 kcal</strong>
+            <p>根据体重周均值在 2350-2450 间微调</p>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">蛋白质</span>
+            <strong>105-115 g</strong>
+            <p>足量但不过量，保护尿酸压力</p>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">碳水</span>
+            <strong>310-350 g</strong>
+            <p>支持胸背训练和游泳恢复</p>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">脂肪</span>
+            <strong>55-65 g</strong>
+            <p>饱和脂肪尽量低于 15-18g</p>
+          </article>
+        </section>
+
+        <section class="panel progress-panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Actual vs target</p>
+              <h2>今日实际摄入对比</h2>
+            </div>
+            <button class="ghost-button" id="export-json" type="button">导出记录</button>
+          </div>
+          <div class="progress-grid" id="macro-progress"></div>
+        </section>
+
+        <section class="content-grid">
+          <div class="stack">
+            <section class="panel">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">Meal plan</p>
+                  <h2>计划饮食打卡</h2>
+                </div>
+                <span class="pill">3餐 + 1加餐</span>
+              </div>
+              <div class="meal-list" id="meal-list"></div>
+            </section>
+
+            <section class="panel">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">Food log</p>
+                  <h2>上传/记录今天吃了什么</h2>
+                </div>
+              </div>
+              <form class="food-form" id="food-form">
+                <label>
+                  食物
+                  <select id="food-select"></select>
+                </label>
+                <label>
+                  重量
+                  <input id="food-grams" type="number" min="1" step="1" value="100" />
+                </label>
+                <label>
+                  状态
+                  <select id="food-state">
+                    <option value="cooked">熟重</option>
+                    <option value="raw">生重/干重</option>
+                  </select>
+                </label>
+                <button type="submit">添加</button>
+              </form>
+              <div class="food-table-wrap">
+                <table class="food-table">
+                  <thead>
+                    <tr>
+                      <th>食物</th>
+                      <th>重量</th>
+                      <th>蛋白</th>
+                      <th>碳水</th>
+                      <th>脂肪</th>
+                      <th>热量</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="food-log"></tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+
+          <div class="stack">
+            <section class="panel">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">Training</p>
+                  <h2>每日训练计划</h2>
+                </div>
+                <select id="training-day" class="compact-select" aria-label="选择训练日"></select>
+              </div>
+              <div class="training-list" id="training-list"></div>
+            </section>
+
+            <section class="panel">
+              <div class="section-heading">
+                <div>
+                  <p class="eyebrow">Daily notes</p>
+                  <h2>身体状态</h2>
+                </div>
+              </div>
+              <div class="notes-grid">
+                <label>
+                  体重 kg
+                  <input id="weight" type="number" min="30" step="0.1" placeholder="63.0" />
+                </label>
+                <label>
+                  腰围 cm
+                  <input id="waist" type="number" min="40" step="0.1" placeholder="选填" />
+                </label>
+                <label>
+                  腰痛 0-10
+                  <input id="back-pain" type="number" min="0" max="10" step="1" placeholder="0" />
+                </label>
+                <label>
+                  饮水 L
+                  <input id="water" type="number" min="0" step="0.1" placeholder="2.5" />
+                </label>
+              </div>
+              <label class="wide-label">
+                今日备注
+                <textarea id="notes" rows="5" placeholder="例如：自由泳25分钟，无腿麻；晚餐吃了巴沙鱼和米饭。"></textarea>
+              </label>
+            </section>
+
+            <section class="panel caution-panel">
+              <p class="eyebrow">Guardrails</p>
+              <h2>健康边界</h2>
+              <ul>
+                <li>尿酸高：避免酒精、含糖饮料、内脏、浓肉汤、贝类和大量红肉。</li>
+                <li>LDL偏高：少黄油/奶油/肥肉/油炸，优先低脂奶、燕麦、全麦、橄榄油。</li>
+                <li>腰椎间盘突出：避免重硬拉、重深蹲、俯身划船；游泳优先自由泳/仰泳。</li>
+                <li>出现腿麻、放射痛、脚无力或大小便异常，应停止训练并就医。</li>
+              </ul>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
