@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-label="tofu">
+  <rect width="160" height="120" rx="14" fill="#eef3ef"/>
+  <path d="M43 52l37-18 38 18v34L80 104 43 86z" fill="#f7f0dc" stroke="#b9822d" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M43 52l37 18 38-18M80 70v34" fill="none" stroke="#b9822d" stroke-width="4"/>
+  <circle cx="58" cy="76" r="3" fill="#d8c49c"/><circle cx="96" cy="82" r="3" fill="#d8c49c"/>
+</svg>

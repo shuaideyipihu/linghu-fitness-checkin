@@ -332,23 +332,19 @@ textarea:focus {
 
 .meal-card {
   display: grid;
-  grid-template-rows: 170px 1fr;
+  gap: 12px;
   overflow: hidden;
   border: 1px solid #e3dccf;
   border-radius: 8px;
   background: #fffaf0;
+  padding: 15px;
 }
 
-.meal-card img,
 .training-banner img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.meal-card > div {
-  padding: 15px;
 }
 
 .meal-card span,
@@ -364,6 +360,45 @@ textarea:focus {
   margin: 0;
   color: var(--muted);
   line-height: 1.65;
+}
+
+.meal-card-body {
+  display: grid;
+  gap: 8px;
+}
+
+.food-cell-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.food-cell {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+  margin: 0;
+  border: 1px solid #e3dccf;
+  border-radius: 7px;
+  background: #fffdf8;
+  padding: 7px;
+}
+
+.food-cell img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 0.78;
+  border-radius: 5px;
+  object-fit: cover;
+  background: #ece4d6;
+}
+
+.food-cell figcaption {
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
 }
 
 .food-reference,
@@ -638,7 +673,7 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 
-  .meal-card {
-    grid-template-rows: 150px 1fr;
+  .food-cell-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

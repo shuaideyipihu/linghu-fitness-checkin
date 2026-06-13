@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-label="noodles">
+  <rect width="160" height="120" rx="14" fill="#f7eddc"/>
+  <path d="M35 66h90l-11 31H46z" fill="#bcd0c7" stroke="#2f6f56" stroke-width="4" stroke-linejoin="round"/>
+  <ellipse cx="80" cy="65" rx="48" ry="16" fill="#f1c66a" stroke="#2f6f56" stroke-width="4"/>
+  <path d="M47 62c14-12 24 11 38-1s24 10 39-2M51 70c18-12 26 9 42-1s22 7 35-2" fill="none" stroke="#9a6a2e" stroke-width="4" stroke-linecap="round"/>
+</svg>

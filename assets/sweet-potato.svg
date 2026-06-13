@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-label="sweet potato">
+  <rect width="160" height="120" rx="14" fill="#f9ecd9"/>
+  <ellipse cx="76" cy="68" rx="45" ry="24" fill="#b05f32" transform="rotate(-12 76 68)"/>
+  <ellipse cx="87" cy="63" rx="30" ry="16" fill="#e89a46" transform="rotate(-12 87 63)"/>
+  <path d="M44 79c25 9 51 5 78-13" fill="none" stroke="#6e3d25" stroke-width="4" stroke-linecap="round"/>
+</svg>

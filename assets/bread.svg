@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-label="whole wheat bread">
+  <rect width="160" height="120" rx="14" fill="#f4ead8"/>
+  <path d="M35 75c0-25 13-43 32-43h26c19 0 32 18 32 43v13H35z" fill="#b9822d"/>
+  <path d="M46 76c0-18 10-31 24-31h20c14 0 24 13 24 31v5H46z" fill="#e3b96c"/>
+  <g fill="#704c25">
+    <path d="M60 58c13 8 27 8 40 0" fill="none" stroke="#704c25" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="63" cy="72" r="2"/><circle cx="82" cy="67" r="2"/><circle cx="99" cy="74" r="2"/>
+  </g>
+</svg>
