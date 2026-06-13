@@ -324,32 +324,41 @@ textarea:focus {
   min-height: 100%;
 }
 
-.plan-timeline {
+.meal-card-grid {
   display: grid;
-  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
 }
 
-.timeline-item {
+.meal-card {
   display: grid;
-  grid-template-columns: 74px 1fr;
-  gap: 16px;
-  border-top: 1px solid #e3dccf;
-  padding-top: 16px;
+  grid-template-rows: 170px 1fr;
+  overflow: hidden;
+  border: 1px solid #e3dccf;
+  border-radius: 8px;
+  background: #fffaf0;
 }
 
-.timeline-item:first-child {
-  border-top: 0;
-  padding-top: 0;
+.meal-card img,
+.training-banner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.timeline-item > span,
+.meal-card > div {
+  padding: 15px;
+}
+
+.meal-card span,
 .week-grid article > span {
   color: var(--gold);
   font-family: "Noto Serif SC", serif;
   font-weight: 700;
 }
 
-.timeline-item p,
+.meal-card p,
 .week-grid p,
 .reference-grid span {
   margin: 0;
@@ -378,6 +387,10 @@ textarea:focus {
   padding: 14px;
 }
 
+.reference-grid article {
+  min-height: 104px;
+}
+
 .reference-grid strong {
   display: block;
   margin-bottom: 6px;
@@ -385,6 +398,19 @@ textarea:focus {
 
 .week-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.training-banner {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.training-banner img {
+  height: 210px;
+  border: 1px solid #e3dccf;
+  border-radius: 8px;
 }
 
 .bottom-cta {
@@ -607,8 +633,12 @@ textarea:focus {
     max-width: 100%;
   }
 
-  .timeline-item {
+  .meal-card-grid,
+  .training-banner {
     grid-template-columns: 1fr;
-    gap: 8px;
+  }
+
+  .meal-card {
+    grid-template-rows: 150px 1fr;
   }
 }
